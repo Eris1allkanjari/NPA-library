@@ -1,7 +1,7 @@
 # NPA-library
 An online library for buying books.
 
-master branch do jete brach kryesor i projektit. Ne do punojme ne develop. Kur te punojme ne feature te re do ishte mire te krijohej nje branch me emer feature/<emri i feature>
+master branch do jete brach kryesor i projektit. Ne do punojme ne develop. Kur te punojme ne feature te re do ishte mire te krijohej nje branch me emer feature/emri i feature
 Kur feature te mbaroj do behet merge ne develop. Kur cdo ndryshim te kete perfunduar develop do behet merge me master. 
 
 TODO  :
