@@ -66,7 +66,7 @@
                         
 
 
-                        <asp:Button ID="b1" runat="server" class="btn btn-primary btn-flat m-b-30 m-t-30" Text="Porosit" OnClick="b1_Click"  />
+                        <asp:Button ID="b1" runat="server" class="btn btn-primary btn-flat m-b-30 m-t-30" Text="Porosit" OnClick="Porosia"  />
 
                      
                     </form>
