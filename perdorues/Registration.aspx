@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Student Registration Form</title>
+    <title>Regjistrimi</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,12 +43,12 @@
                 <div class="login-form">
                     <form id="form1" runat="server">
                         <div class="form-group">
-                            <label>First Name</label>
-                            <asp:TextBox ID="firstname" runat="server" class="form-control" placeholder="First Name" required></asp:TextBox>
+                            <label>Emri</label>
+                            <asp:TextBox ID="firstname" runat="server" class="form-control" placeholder="Emri" required></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label>Last Name</label>
-                            <asp:TextBox ID="lastname" runat="server" class="form-control" placeholder="Last Name" required></asp:TextBox>
+                            <label>Mbiemri</label>
+                            <asp:TextBox ID="lastname" runat="server" class="form-control" placeholder="Mbiemri" required></asp:TextBox>
 
                         </div>
                         <div class="form-group">
@@ -63,20 +63,25 @@
 
                         <div class="form-group">
                             <label>Password</label>
-                            <asp:TextBox ID="password" runat="server" class="form-control" placeholder="password" TextMode="Password" required></asp:TextBox>
+                            <asp:TextBox ID="password" runat="server" class="form-control" placeholder="Password" TextMode="Password" required></asp:TextBox>
                         </div>
 
                          <div class="form-group">
                             <label>Email</label>
-                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="email" required></asp:TextBox>
+                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Email" required></asp:TextBox>
+                        </div>
+
+                         <div class="form-group">
+                            <label>Adresa</label>
+                            <asp:TextBox ID="adresa" runat="server" class="form-control" placeholder="Adresa" required></asp:TextBox>
                         </div>
 
 
                          <div class="form-group">
-                            <label>Contact</label>
-                            <asp:TextBox ID="contact" runat="server" class="form-control" placeholder="contact" required></asp:TextBox>
+                            <label>Numer Telefoni</label>
+                            <asp:TextBox ID="contact" runat="server" class="form-control" placeholder="Numer telefoni" required></asp:TextBox>
                         </div>
-                        <asp:Button ID="b1" runat="server" class="btn btn-primary btn-flat m-b-30 m-t-30" Text="Register Now" OnClick="b1_Click"  />
+                        <asp:Button ID="b1" runat="server" class="btn btn-primary btn-flat m-b-30 m-t-30" Text="Regjistrohu" OnClick="b1_Click"  />
 
                      
                     </form>

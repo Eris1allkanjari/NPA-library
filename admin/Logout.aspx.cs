@@ -11,7 +11,7 @@ public partial class librarian_logout : System.Web.UI.Page
     {
 
         Session.Clear();
-        Response.Redirect("login.aspx");
+        Response.Redirect("Login.aspx");
 
     }
 }

@@ -10,6 +10,6 @@ public partial class student_logout : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session.Clear();
-        Response.Redirect("student_login.aspx");
+        Response.Redirect("Login.aspx");
     }
 }

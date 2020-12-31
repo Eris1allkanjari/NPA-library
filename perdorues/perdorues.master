@@ -58,7 +58,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Librat e mi</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="Librat_E_Mi.aspx">My Issued Books</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="LibratEMi.aspx">My Issued Books</a></li>
                        
                     </ul>
                 </li>
@@ -118,34 +118,20 @@
                 <div class="header-left">
                     
                    
-
+                    <form runat="server">
                   <div class="dropdown for-message">
-                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                              <asp:LinkButton  class="btn btn-secondary dropdown-toggle" ID="message" runat="server" OnClick="redirectCheckout"> <i class="menu-icon fa fa-shopping-cart"></i>
+                            <span class="count bg-primary"><asp:Label ID="notification1" runat="server"></asp:Label></span></asp:LinkButton>
+
+                        <!--<button class="btn btn-secondary dropdown-toggle" type="button"
                                 id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-bell"></i>
-                            <span class="count bg-primary"><asp:Label ID="notification1" runat="server"></asp:Label></span>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="redirectCheckout">
+                          
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="message" style="border-style:solid; border-width:1px">
-                            <p class="red">You have <asp:Label ID="notification2" runat="server"></asp:Label> Mails</p>
-                            
-                            <asp:Repeater ID="r1" runat="server">
-                            <ItemTemplate>
-                            <a class="dropdown-item media" href="pwd_reset.aspx" style="border-style:solid; border-width:1px; border-color:grey">
-                              
-                                <span class="message media-body">
-                                    <span class="name float-left"><%#Eval("susername") %></span>
-                                    
-                                        <p><%#gettwentycharacters(Eval("msg"))%></p>
-                                </span>
-                            </a>
-                                </ItemTemplate>
-                           </asp:Repeater>
-                        </div>
-                    </div>
-
-
+                      -->
+       
                 </div>
+                        </form>
             </div>
 
            

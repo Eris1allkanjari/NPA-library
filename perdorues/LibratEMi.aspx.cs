@@ -23,9 +23,9 @@ public partial class student_my_issued_books : System.Web.UI.Page
         }
         con.Open();
        
-        if (Session["student"]==null)
+        if (Session["perdorues"]==null)
         {
-            Response.Redirect("student_login.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         SqlCommand cmd2 = con.CreateCommand();
@@ -63,7 +63,7 @@ public partial class student_my_issued_books : System.Web.UI.Page
 
         SqlCommand cmd1 = con.CreateCommand();
         cmd1.CommandType = CommandType.Text;
-        cmd1.CommandText = "select * from issue_books where student_username='"+ Session["student"].ToString() +"'";
+        cmd1.CommandText = "select * from issue_books where student_username='"+ Session["perdorues"].ToString() +"'";
         cmd1.ExecuteNonQuery();
         DataTable dt1 = new DataTable();
         SqlDataAdapter da1 = new SqlDataAdapter(cmd1);

@@ -24,6 +24,11 @@ public partial class student_student : System.Web.UI.MasterPage
         
     }
 
+    public void redirectCheckout(object sender, EventArgs e){
+        Response.Redirect("Checkout.aspx");
+
+    }
+
     public string gettwentycharacters(object myvalues)
     {
 
