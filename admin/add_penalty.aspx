@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/librarian/librarian.Master" AutoEventWireup="true" CodeFile="add_penalty.aspx.cs" Inherits="librarian_add_penalty" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeFile="add_penalty.aspx.cs" Inherits="librarian_add_penalty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" Runat="Server">
     <div class="col-lg-12">

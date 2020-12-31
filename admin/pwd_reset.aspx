@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/librarian/librarian.Master" AutoEventWireup="true" CodeFile="pwd_reset.aspx.cs" Inherits="librarian_pwd_reset" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeFile="pwd_reset.aspx.cs" Inherits="librarian_pwd_reset" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" Runat="Server">
     <div class="col-lg-12">
         <div class="card">

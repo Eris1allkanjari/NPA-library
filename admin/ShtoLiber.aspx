@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/librarian/librarian.Master" AutoEventWireup="true" CodeFile="ShtoLiber.aspx.cs" Inherits="librarian_add_books" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeFile="ShtoLiber.aspx.cs" Inherits="librarian_add_books" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="Server">
     <div class="col-lg-12">

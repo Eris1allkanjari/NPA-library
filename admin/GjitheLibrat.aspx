@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/librarian/librarian.Master" AutoEventWireup="true" CodeFile="GjitheLibrat.aspx.cs" Inherits="librarian_display_all_books" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeFile="GjitheLibrat.aspx.cs" Inherits="librarian_display_all_books" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="Server">
 

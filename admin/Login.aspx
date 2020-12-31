@@ -39,7 +39,7 @@
             <div class="login-content">
                 <div class="login-logo">
                     <a href="index.html">
-                        <h1 style="color: white">Librarian Login</h1>
+                        <h1 style="color: white">Login</h1>
                     </a>
                 </div>
                 <div class="login-form">
@@ -55,9 +55,9 @@
                         </div>
 
                      
-                        <asp:Button ID="b1" runat="server" Text="Sign In" class="btn btn-success btn-flat m-b-30 m-t-30" OnClick="b1_Click" ></asp:Button>
+                        <asp:Button ID="b1" runat="server" Text="Logohu" class="btn btn-success btn-flat m-b-30 m-t-30" OnClick="b1_Click" ></asp:Button>
                         <div class="alert alert-danger" id="error" runat="server" style="margin-top:10px; display:none">
-                            <strong>You have entered invalid username or password</strong>
+                            <strong>Username ose Password eshte i gabuar</strong>
                         </div>
                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Jeni student? Logohuni ketu</asp:LinkButton>
                     </form>
