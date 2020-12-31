@@ -56,9 +56,9 @@
                
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Issued Books</a>
+                       aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Librat e mi</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="my_issued_books.aspx">My Issued Books</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="Librat_E_Mi.aspx">My Issued Books</a></li>
                        
                     </ul>
                 </li>
@@ -68,9 +68,9 @@
               
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Books</a>
+                       aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Home</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="student_display_all_books.aspx">All Books</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="GjitheLibrat.aspx">Home</a></li>
                         
                     </ul>
                 </li>
@@ -89,7 +89,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-lock"></i>Logout</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="logout.aspx">Logout</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="Logout.aspx">Logout</a></li>
                         
                     </ul>
                 </li>
