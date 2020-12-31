@@ -59,7 +59,7 @@
                         <div class="alert alert-danger" id="error" runat="server" style="margin-top:10px; display:none">
                             <strong>You have entered invalid username or password</strong>
                         </div>
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Student login</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Jeni student? Logohuni ketu</asp:LinkButton>
                     </form>
                 </div>
             </div>

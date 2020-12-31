@@ -21,9 +21,9 @@ public partial class librarian_add_books : System.Web.UI.Page
         con.Open();
 
 
-        if(Session["librarian"]==null)
+        if(Session["admin"]==null)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("Login.aspx");
         }
 
     }
@@ -37,7 +37,7 @@ public partial class librarian_add_books : System.Web.UI.Page
 
         string path = "";
 
-        f1.SaveAs(Request.PhysicalApplicationPath + "/librarian/books_images/" + books_image_name.ToString());
+        f1.SaveAs(Request.PhysicalApplicationPath + "/admin/books_images/" + books_image_name.ToString());
         path = "books_images/" + books_image_name.ToString();
 
 

@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
-public partial class student_student_display_all_books : System.Web.UI.Page
+public partial class librarian_display_all_books : System.Web.UI.Page
 {
-
     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -20,10 +20,11 @@ public partial class student_student_display_all_books : System.Web.UI.Page
         }
         con.Open();
 
-        if (Session["student"] == null)
+        if (Session["admin"] == null)
         {
-            Response.Redirect("student_login.aspx");
+            Response.Redirect("Login.aspx");
         }
+
 
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = CommandType.Text;
@@ -35,4 +36,5 @@ public partial class student_student_display_all_books : System.Web.UI.Page
         r1.DataSource = dt;
         r1.DataBind();
     }
-}
+
+    }

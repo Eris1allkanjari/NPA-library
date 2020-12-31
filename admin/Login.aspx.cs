@@ -47,8 +47,8 @@ namespace WebApplication1.librarian
 
             if(i>0)
             {
-                Session["librarian"] = username.Text;
-                Response.Redirect("display_all_books.aspx");
+                Session["admin"] = username.Text;
+                Response.Redirect("GjitheLibrat.aspx");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace WebApplication1.librarian
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../student/student_login.aspx");
+            Response.Redirect("../perdorues/Login.aspx");
         }
     }
 }

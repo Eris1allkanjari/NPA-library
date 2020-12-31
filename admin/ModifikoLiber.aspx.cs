@@ -22,9 +22,9 @@ public partial class librarian_edit_books : System.Web.UI.Page
         }
         con.Open();
 
-        if (Session["librarian"] == null)
+        if (Session["admin"] == null)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("Login.aspx");
 
         }
 
@@ -82,7 +82,7 @@ public partial class librarian_edit_books : System.Web.UI.Page
         if (f2.FileName.ToString() != "")
         {
             books_pdf = Class1.GetRandomPassword(10) + ".pdf";
-            f2.SaveAs(Request.PhysicalApplicationPath + "/librarian/books_pdf/" + books_pdf.ToString());
+            f2.SaveAs(Request.PhysicalApplicationPath + "/admin/books_pdf/" + books_pdf.ToString());
             path2 = "books_pdf/" + books_pdf.ToString();
 
             SqlCommand cmd = con.CreateCommand();
@@ -94,7 +94,7 @@ public partial class librarian_edit_books : System.Web.UI.Page
         if (f3.FileName.ToString() != "")
         {
             books_video = Class1.GetRandomPassword(10) + ".mp4";
-            f3.SaveAs(Request.PhysicalApplicationPath + "/librarian/books_videos/" + books_video.ToString());
+            f3.SaveAs(Request.PhysicalApplicationPath + "/admin/books_videos/" + books_video.ToString());
             path3 = "books_videos/" + books_video.ToString();
 
             SqlCommand cmd = con.CreateCommand();
@@ -114,6 +114,6 @@ public partial class librarian_edit_books : System.Web.UI.Page
 
 
 
-        Response.Redirect("display_all_books.aspx");
+        Response.Redirect("GjitheLibrat.aspx");
     }
 }

@@ -55,11 +55,11 @@
 
                      
                         <asp:Button ID="b1" runat="server" Text="Sign In" class="btn btn-success btn-flat m-b-30 m-t-30" OnClick="b1_Click"  ></asp:Button><br />
-                        <center><a href="student_registration.aspx" style="color:black">Register Now</a></center>
+                        <center><a href="Registration.aspx" style="color:black">Register Now</a></center>
                         <div class="alert alert-danger" id="error" runat="server" style="margin-top:10px; display:none">
                             <strong>You have entered invalid username or password</strong>
                         </div>
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Librarian login</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Jeni admin? Logohuni ketu</asp:LinkButton>
                     </form>
                 </div>
             </div>

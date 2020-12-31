@@ -46,8 +46,8 @@ public partial class student_student_login : System.Web.UI.Page
 
         if (i > 0)
         {
-            Session["student"] = username.Text;
-            Response.Redirect("student_display_all_books.aspx");
+            Session["perdorues"] = username.Text;
+            Response.Redirect("GjitheLibrat.aspx");
         }
         else
         {
@@ -58,6 +58,6 @@ public partial class student_student_login : System.Web.UI.Page
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("../librarian/login.aspx");
+        Response.Redirect("../admin/Login.aspx");
     }
 }

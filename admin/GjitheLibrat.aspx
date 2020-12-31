@@ -36,7 +36,7 @@
                             <td><%#Eval("books_author_name") %></td>
                             <td><%#Eval("books_isbn") %></td>
                             <td><%#Eval("available_qty") %></td>
-                            <td><a href="edit_books.aspx?id=<%#Eval("id") %>">Edit Books</a></td>
+                            <td><a href="ModifikoLiber.aspx?id=<%#Eval("id") %>">Edit Books</a></td>
                             <td><a href="delete_files.aspx?id2=<%#Eval("id") %>">Delete Books</a></td>
                         </tr>
 
