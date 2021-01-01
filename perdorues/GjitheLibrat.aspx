@@ -35,6 +35,7 @@
                             <td><%#Eval("books_author_name") %></td>
                             <td><%#Eval("books_isbn") %></td>
                             <td><%#Eval("available_qty") %></td>
+                             <td><asp:Button ID="shtoShporteBtn" CommandArgument='<%#Eval("books_isbn") + "," + Eval("available_qty")%>' OnClick="shtoShporteBtn_Click" runat="server" /></td>
                         </tr>
 
                     </ItemTemplate>
