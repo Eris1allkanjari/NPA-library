@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.master" AutoEventWireup="true" CodeFile="GjitheLibrat.aspx.cs" Inherits="student_student_display_all_books" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.master" 
+ AutoEventWireup="true" CodeFile="GjitheLibrat.aspx.cs" Inherits="student_student_display_all_books" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" Runat="Server">
 
@@ -6,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-
+    <form id="shtoShporteForm" runat="server">
      <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
@@ -35,7 +36,7 @@
                             <td><%#Eval("books_author_name") %></td>
                             <td><%#Eval("books_isbn") %></td>
                             <td><%#Eval("available_qty") %></td>
-                             <td><asp:Button ID="shtoShporteBtn" CommandArgument='<%#Eval("books_isbn") + "," + Eval("available_qty")%>' OnClick="shtoShporteBtn_Click" runat="server" /></td>
+                             <td><asp:Button ID="shtoShporteBtn" CssClass="btn btn-primary" Text="Shto ne shporte" CommandArgument='<%#Eval("books_isbn") + "," + Eval("available_qty")%>' OnClick="shtoShporteBtn_Click" runat="server" ></asp:Button></td>
                         </tr>
 
                     </ItemTemplate>
@@ -48,6 +49,7 @@
             </div>
         </div>
     </div>
+</form>
 
 
     <script type="text/javascript">
