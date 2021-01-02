@@ -25,15 +25,19 @@ public partial class student_student_display_all_books : System.Web.UI.Page
             Response.Redirect("Login.aspx");
         }
 
-        SqlCommand cmd = con.CreateCommand();
-        cmd.CommandType = CommandType.Text;
-        cmd.CommandText = "select * from books";
-        cmd.ExecuteNonQuery();
-        DataTable dt = new DataTable();
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        da.Fill(dt);
-        r1.DataSource = dt;
-        r1.DataBind();
+
+        if (!Page.IsPostBack) {
+
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from books";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            r1.DataSource = dt;
+            r1.DataBind();
+        }
     }
 
     protected void shtoShporteBtn_Click(object sender, EventArgs e) {
@@ -43,7 +47,7 @@ public partial class student_student_display_all_books : System.Web.UI.Page
         Button btn = (Button)sender;
         String[] commandArguments = btn.CommandArgument.ToString().Split(new char[] { ',' });
         String isbn = commandArguments[0];
-        Int32 sasia = Int32.Parse(commandArguments[2]);
+        Int32 sasia = Int32.Parse(commandArguments[1]);
 
         /*if (isbn == "Select") {
             Response.Write("<script>alert('plese select books'); window.location.href=window.location.href</script>");
@@ -77,7 +81,7 @@ public partial class student_student_display_all_books : System.Web.UI.Page
                     string username = "";
                     SqlCommand cmd2 = con.CreateCommand();
                     cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "select * from student_registration where student_username='" + logedInUsername + "'";
+                    cmd2.CommandText = "select * from student_registration where username='" + logedInUsername + "'";
                     cmd2.ExecuteNonQuery();
                     DataTable dt2 = new DataTable();
                     SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
@@ -96,6 +100,13 @@ public partial class student_student_display_all_books : System.Web.UI.Page
                     cmd4.CommandType = CommandType.Text;
                     cmd4.CommandText = "update books set available_qty=available_qty-1 where books_isbn='" + isbn + "'";
                     cmd4.ExecuteNonQuery();
+
+                Label shoppingCartNumber = (Label)Master.FindControl("notification1");
+                if (shoppingCartNumber.Text.Equals("")) {
+                    shoppingCartNumber.Text = "0";
+                }
+                Int32 shoppingCartNr = Int32.Parse(shoppingCartNumber.Text) + 1;
+                shoppingCartNumber.Text = shoppingCartNr.ToString();
 
                     Response.Write("<script>alert('books issues successfully'); window.location.href=window.location.href;</script>");
                 }

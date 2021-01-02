@@ -13,6 +13,8 @@ public partial class student_student : System.Web.UI.MasterPage
     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
     int count = 0;
 
+   
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (con.State == ConnectionState.Open)
@@ -49,6 +51,15 @@ public partial class student_student : System.Web.UI.MasterPage
         }
 
 
+    }
+
+    public string ShoppingCartNumber {
+        get {
+            return notification1.Text;
+        }
+        set {
+            notification1.Text = value;
+        }
     }
 
 

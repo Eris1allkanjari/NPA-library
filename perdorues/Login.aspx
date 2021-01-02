@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Student Login</title>
+    <title>User Login</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,11 +46,11 @@
                         <div class="form-group">
                             <label>Username</label>
                           
-                            <asp:TextBox ID="username" runat="server" class="form-control" placeholder="username" required></asp:TextBox>
+                            <asp:TextBox ID="username" runat="server" class="form-control" placeholder="Username" required></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                           <asp:TextBox ID="password" runat="server" class="form-control" placeholder="password" TextMode="password" required></asp:TextBox>
+                           <asp:TextBox ID="password" runat="server" class="form-control" placeholder="Password" TextMode="password" required></asp:TextBox>
                         </div>
 
                      

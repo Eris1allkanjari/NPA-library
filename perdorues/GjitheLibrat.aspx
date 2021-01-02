@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.master" 
  AutoEventWireup="true" CodeFile="GjitheLibrat.aspx.cs" Inherits="student_student_display_all_books" %>
+<%@ MasterType VirtualPath="~/perdorues/perdorues.master" %>  
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" Runat="Server">
 
