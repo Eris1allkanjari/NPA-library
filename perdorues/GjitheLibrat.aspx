@@ -22,11 +22,11 @@
                        <table class="table" id="example">
                             <thead>
                                 <tr>
-                                    <th scope="col">books image</th>
-                                    <th scope="col">books title</th>
-                                    <th scope="col">author name</th>
-                                    <th scope="col">isbn</th>
-                                    <th scope="col">available qty</th>                           
+                                    <th scope="col"></th>
+                                    <th scope="col">Titulli</th>
+                                    <th scope="col">Autori</th>
+                                   <!-- <th scope="col">isbn</th>
+                                    <th scope="col">available qty</th> -->                          
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,8 +36,7 @@
                             <td><img src="<%#Eval("books_image") %>" height="100" width="100" /></td>
                             <td><%#Eval("books_title") %></td>
                             <td><%#Eval("books_author_name") %></td>
-                            <td><%#Eval("books_isbn") %></td>
-                            <td><%#Eval("available_qty") %></td>
+                           <!-- <td><%//#Eval("books_isbn") %></td> -->
                              <td><asp:Button ID="shtoShporteBtn" CssClass="btn btn-primary" Text="Shto ne shporte" CommandArgument='<%#Eval("books_isbn") + "," + Eval("available_qty")%>' OnClick="shtoShporteBtn_Click" runat="server" ></asp:Button></td>
                         </tr>
 

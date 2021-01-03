@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.Master" AutoEventWireup="true" CodeFile="LibratEMi.aspx.cs" Inherits="student_my_issued_books" %>
+<%@ MasterType VirtualPath="~/perdorues/perdorues.master" %>  
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" Runat="Server">
 
@@ -13,37 +15,29 @@
     </div>
     <div class="container-fluid" style="min-height:500px; background-color:white">
         <asp:DataList ID="d1" runat="server">
-            <HeaderTemplate>
-                <table class="table table-bordered">
-                    <tr>
-                        <th>student_enrollment_no</th>
-                         <th>books_isbn</th>
-                         <th>books_issue_date</th>
-                         <th>books_approx_return_date</th>
-                         <th>student_username</th>
-                         <th>is_books_return</th>
-                         <th>books_returned_date</th>
-                         <th>latedays</th>
-                        <th>Penalty ($)</th>
+           <HeaderTemplate>
+                       <table class="table" id="example">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Titulli</th>
+                                    <th scope="col">Autori</th>
+                                   <!-- <th scope="col">isbn</th>
+                                    <th scope="col">available qty</th> -->                          
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+           <ItemTemplate>
+                        <tr>
+                            <td><img src="<%#Eval("books_image") %>" height="100" width="100" /></td>
+                            <td><%#Eval("books_title") %></td>
+                            <td><%#Eval("books_author_name") %></td>
+                           <!-- <td><%//#Eval("books_isbn") %></td> -->
+                             <td><asp:Button ID="hiqShportaBtn" CssClass="btn btn-primary" Text="Hiq nga shporte" CommandArgument='<%#Eval("books_isbn") + "," + Eval("available_qty")%>' OnClick="hiqShportaBtn_Click" runat="server" ></asp:Button></td>
+                        </tr>
 
-                    </tr>
-            </HeaderTemplate>
-            <ItemTemplate>
-
-                <tr>
-                    <td><%#Eval("student_enrollment_no") %></td>
-                    <td><%#Eval("books_isbn") %></td>
-                    <td><%#Eval("books_issue_date") %></td>
-                    <td><%#Eval("books_approx_return_date") %></td>
-                    <td><%#Eval("student_username") %></td>
-                    <td><%#Eval("is_books_return") %></td>
-                    <td><%#Eval("books_returned_date") %></td>
-                    <td><%#Eval("latedays") %></td>
-                    <th><%#Eval("penalty") %></th>
-                </tr>
-
-
-            </ItemTemplate>
+                    </ItemTemplate>
             
             <FooterTemplate>
                 </table>
