@@ -27,6 +27,17 @@ public partial class student_student : System.Web.UI.MasterPage
             notification1.Text = "0";
         }
 
+        String username = Session["perdorues"].ToString();
+
+        SqlCommand shoppingCartCmd = con.CreateCommand();
+        shoppingCartCmd.CommandType = CommandType.Text;
+        shoppingCartCmd.CommandText = "select * from issue_books where student_username='" + username + "'";
+        shoppingCartCmd.ExecuteNonQuery();
+        DataTable dataTable = new DataTable();
+        SqlDataAdapter ddataAdapter = new SqlDataAdapter(shoppingCartCmd);
+        ddataAdapter.Fill(dataTable);
+        ShoppingCartNumber = dataTable.Rows.Count.ToString();
+
     }
 
     public void redirectCheckout(object sender, EventArgs e){

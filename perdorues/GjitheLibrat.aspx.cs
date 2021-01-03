@@ -38,16 +38,7 @@ public partial class student_student_display_all_books : System.Web.UI.Page
             r1.DataSource = dt;
             r1.DataBind();
 
-            String username = Session["perdorues"].ToString();
-
-            SqlCommand shoppingCartCmd = con.CreateCommand();
-            shoppingCartCmd.CommandType = CommandType.Text;
-            shoppingCartCmd.CommandText = "select * from issue_books where student_username='" + username + "'";
-            shoppingCartCmd.ExecuteNonQuery();
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter ddataAdapter = new SqlDataAdapter(shoppingCartCmd);
-            ddataAdapter.Fill(dataTable);
-            this.Master.ShoppingCartNumber = dataTable.Rows.Count.ToString();
+            
         }
     }
 

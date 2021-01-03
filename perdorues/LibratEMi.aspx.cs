@@ -72,7 +72,7 @@ public partial class student_my_issued_books : System.Web.UI.Page
         {
 
             DataRow dr = dt.NewRow();
-            dr["student_enrollment_no"] = dr1["student_enrollment_no"].ToString();
+            //dr["student_enrollment_no"] = dr1["student_enrollment_no"].ToString();
             dr["books_isbn"] = dr1["books_isbn"].ToString();
             dr["books_issue_date"] = dr1["books_issue_date"].ToString();
             dr["books_approx_return_date"] = dr1["books_approx_return_date"].ToString();
