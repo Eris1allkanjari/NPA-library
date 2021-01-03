@@ -37,6 +37,17 @@ public partial class student_student_display_all_books : System.Web.UI.Page
             da.Fill(dt);
             r1.DataSource = dt;
             r1.DataBind();
+
+            String username = Session["perdorues"].ToString();
+
+            SqlCommand shoppingCartCmd = con.CreateCommand();
+            shoppingCartCmd.CommandType = CommandType.Text;
+            shoppingCartCmd.CommandText = "select * from issue_books where student_username='" + username + "'";
+            shoppingCartCmd.ExecuteNonQuery();
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter ddataAdapter = new SqlDataAdapter(shoppingCartCmd);
+            ddataAdapter.Fill(dataTable);
+            this.Master.ShoppingCartNumber = dataTable.Rows.Count.ToString();
         }
     }
 
@@ -106,7 +117,8 @@ public partial class student_student_display_all_books : System.Web.UI.Page
                     shoppingCartNumber.Text = "0";
                 }
                 Int32 shoppingCartNr = Int32.Parse(shoppingCartNumber.Text) + 1;
-                shoppingCartNumber.Text = shoppingCartNr.ToString();
+
+                this.Master.ShoppingCartNumber = shoppingCartNr.ToString();
 
                     Response.Write("<script>alert('books issues successfully'); window.location.href=window.location.href;</script>");
                 }

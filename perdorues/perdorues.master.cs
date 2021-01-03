@@ -11,7 +11,7 @@ using System.Configuration;
 public partial class student_student : System.Web.UI.MasterPage
 {
     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
-    int count = 0;
+    //int count = 0;
 
    
 
@@ -23,7 +23,10 @@ public partial class student_student : System.Web.UI.MasterPage
         }
         con.Open();
 
-        
+        if (notification1.Text.Equals("")) {
+            notification1.Text = "0";
+        }
+
     }
 
     public void redirectCheckout(object sender, EventArgs e){
@@ -31,7 +34,7 @@ public partial class student_student : System.Web.UI.MasterPage
 
     }
 
-    public string gettwentycharacters(object myvalues)
+    /*public string gettwentycharacters(object myvalues)
     {
 
         string a;
@@ -51,7 +54,7 @@ public partial class student_student : System.Web.UI.MasterPage
         }
 
 
-    }
+    }*/
 
     public string ShoppingCartNumber {
         get {
