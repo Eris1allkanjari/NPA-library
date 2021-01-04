@@ -59,7 +59,7 @@ public partial class student_student_display_all_books : System.Web.UI.Page
         int found = 0;
             SqlCommand cmd0 = con.CreateCommand();
             cmd0.CommandType = CommandType.Text;
-            cmd0.CommandText = "select * from issue_books where student_username='" + logedInUsername + "' and books_isbn='" + isbn+ "' and is_books_return='no'";
+            cmd0.CommandText = "select * from issue_books where student_username='" + logedInUsername + "' and books_isbn='" + isbn+ "'";
             cmd0.ExecuteNonQuery();
             DataTable dt0 = new DataTable();
             SqlDataAdapter da0 = new SqlDataAdapter(cmd0);
@@ -92,9 +92,27 @@ public partial class student_student_display_all_books : System.Web.UI.Page
                         username = dr2["username"].ToString();
                     }
 
-                    SqlCommand cmd3 = con.CreateCommand();
+                SqlCommand getBookCmd = con.CreateCommand();
+                getBookCmd.CommandType = CommandType.Text;
+                getBookCmd.CommandText = "select * from books where books_isbn='" + isbn + "'";
+                getBookCmd.ExecuteNonQuery();
+                DataTable bookDt = new DataTable();
+                SqlDataAdapter bookDataAdapter = new SqlDataAdapter(getBookCmd);
+                bookDataAdapter.Fill(bookDt);
+                String title = "";
+                String imageUrl = "";
+                String author = "";
+                foreach (DataRow dr2 in bookDt.Rows) {
+                    title  = dr2["books_title"].ToString();
+                    imageUrl = dr2["books_image"].ToString();
+                     author = dr2["books_author_name"].ToString();
+
+
+                }
+
+                SqlCommand cmd3 = con.CreateCommand();
                     cmd3.CommandType = CommandType.Text;
-                    cmd3.CommandText = "insert into issue_books values('" + isbn+ "','" + books_isseue_date.ToString() + "','" + approx_return_date.ToString() + "','" + username.ToString() + "','no','no')";
+                    cmd3.CommandText = "insert into issue_books values('" + isbn+ "','" + books_isseue_date.ToString() + "','" +  username.ToString() + "','" + title + "','" + imageUrl + "','" + author + "')";
                     cmd3.ExecuteNonQuery();
 
 

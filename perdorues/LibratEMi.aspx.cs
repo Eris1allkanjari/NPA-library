@@ -7,41 +7,26 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
-public partial class student_my_issued_books : System.Web.UI.Page
-{
+public partial class student_my_issued_books : System.Web.UI.Page {
 
     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
 
     string penalty = "0";
     double noofdays = 0;
-    protected void Page_Load(object sender, EventArgs e)
-    {
+    protected void Page_Load(object sender, EventArgs e) {
 
-        if(con.State==ConnectionState.Open)
-        {
+        if (con.State == ConnectionState.Open) {
             con.Close();
         }
         con.Open();
-       
-        if (Session["perdorues"]==null)
-        {
+
+        if (Session["perdorues"] == null) {
             Response.Redirect("Login.aspx");
         }
 
 
         if (!Page.IsPostBack) {
-
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from issue_books";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            d1.DataSource = dt;
-            d1.DataBind();
-
-
+            getMyBooks();
         }
 
 
@@ -103,30 +88,42 @@ public partial class student_my_issued_books : System.Web.UI.Page
         Button btn = (Button)sender;
         String[] commandArguments = btn.CommandArgument.ToString().Split(new char[] { ',' });
         String isbn = commandArguments[0];
-        Int32 sasia = Int32.Parse(commandArguments[1]);
+        //Int32 sasia = Int32.Parse(commandArguments[1]);
 
 
-                SqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "delete from issue_books where student_username='" + logedInUsername + "' and books_isbn='" + isbn + "'";
-                cmd3.ExecuteNonQuery();
+        SqlCommand cmd3 = con.CreateCommand();
+        cmd3.CommandType = CommandType.Text;
+        cmd3.CommandText = "delete from issue_books where student_username='" + logedInUsername + "' and books_isbn='" + isbn + "'";
+        cmd3.ExecuteNonQuery();
 
 
-                SqlCommand cmd4 = con.CreateCommand();
-                cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "update books set available_qty=available_qty+1 where books_isbn='" + isbn + "'";
-                cmd4.ExecuteNonQuery();
+        SqlCommand cmd4 = con.CreateCommand();
+        cmd4.CommandType = CommandType.Text;
+        cmd4.CommandText = "update books set available_qty=available_qty+1 where books_isbn='" + isbn + "'";
+        cmd4.ExecuteNonQuery();
 
-                Label shoppingCartNumber = (Label)Master.FindControl("notification1");
-                if (shoppingCartNumber.Text.Equals("")) {
-                    shoppingCartNumber.Text = "0";
-                }
-                Int32 shoppingCartNr = Int32.Parse(shoppingCartNumber.Text) - 1;
+        Label shoppingCartNumber = (Label)Master.FindControl("notification1");
+        if (shoppingCartNumber.Text.Equals("")) {
+            shoppingCartNumber.Text = "0";
+        }
+        Int32 shoppingCartNr = Int32.Parse(shoppingCartNumber.Text) - 1;
 
-                this.Master.ShoppingCartNumber = shoppingCartNr.ToString();
+        this.Master.ShoppingCartNumber = shoppingCartNr.ToString();
 
-            }
-        
-    
+        getMyBooks();
+
+    }
+
+    public void getMyBooks() {
+        SqlCommand cmd = con.CreateCommand();
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "select * from issue_books";
+        cmd.ExecuteNonQuery();
+        DataTable dt = new DataTable();
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        da.Fill(dt);
+        d1.DataSource = dt;
+        d1.DataBind();
+    }
 
 }

@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.Master" AutoEventWireup="true" CodeFile="LibratEMi.aspx.cs" Inherits="student_my_issued_books" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perdorues/perdorues.Master"  AutoEventWireup="true" CodeFile="LibratEMi.aspx.cs" Inherits="student_my_issued_books" %>
 
 <%@ MasterType VirtualPath="~/perdorues/perdorues.master" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="Server">
@@ -10,7 +12,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>My Issued Books</h1>
+                        <h1>Shporta</h1>
                     </div>
                 </div>
             </div>
@@ -38,7 +40,7 @@
                         <td><%#Eval("author_name") %></td>
                         <!-- <td><%//#Eval("books_isbn") %></td> -->
                         <td>
-                            <asp:Button ID="hiqShportaBtn" CssClass="btn btn-primary" Text="Hiq nga shporte" CommandArgument='<%#Eval("books_isbn")%>' OnClick="hiqShportaBtn_Click" runat="server"></asp:Button></td>
+                            <asp:Button ID="hiqShportaBtn" CssClass="btn btn-primary" Text="Hiq nga shporta" CommandArgument='<%#Eval("books_isbn")%>' OnClick="hiqShportaBtn_Click" runat="server"></asp:Button></td>
                     </tr>
 
                 </ItemTemplate>
@@ -47,6 +49,20 @@
                     </table>
                 </FooterTemplate>
             </asp:DataList>
+
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:Button ID="checkOutBtn" runat="server" Text="Shko ne checkout" />
+
+            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="checkOutBtn"
+                CancelControlID="Button2" BackgroundCssClass="Background">
+            </cc1:ModalPopupExtender>
+
+            <asp:Panel ID="Panl1" runat="server" CssClass="Popup" align="center" Style="display: none">
+                <iframe style="width: 800px; height: 650px;" id="irm1" src="Checkout.aspx" runat="server"></iframe>
+                <br />
+                <asp:Button ID="Button2" runat="server" Text="Close" />
+            </asp:Panel>
 
         </div>
     </form>
